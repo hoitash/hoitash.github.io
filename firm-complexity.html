@@ -1,0 +1,163 @@
+<!-- FILE: firm-complexity.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firm Complexity | XBRL Research</title>
+    <meta name="description" content="Measuring Firm Complexity with Accounting Reporting Complexity (ARC). Download data, code, and read relevant papers.">
+    <meta name="keywords" content="XBRL, Accounting Complexity, Research, Data, Hoitash, Bentley, Northeastern, ARC, Firm Complexity">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <div id="app" class="flex flex-col min-h-screen">
+        <!-- Header -->
+        <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+            <nav class="container mx-auto px-4 lg:px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="assets/logo.jpg" alt="XBRL Research Logo" class="h-14 w-auto">
+                    </a>
+                    <div class="hidden lg:flex items-center gap-8">
+                        <a href="index.html" class="nav-link">XBRL Research</a>
+                        <a href="firm-complexity.html" class="nav-link active">Firm Complexity</a>
+                        <a href="textual-data.html" class="nav-link">Textual Data</a>
+                        <a href="studies.html" class="nav-link">Studies Using ARC</a>
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </div>
+                    <div class="lg:hidden">
+                        <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-blue-900 px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="block nav-link">XBRL Research</a>
+                <a href="firm-complexity.html" class="block nav-link active">Firm Complexity</a>
+                <a href="textual-data.html" class="block nav-link">Textual Data</a>
+                <a href="studies.html" class="block nav-link">Studies Using ARC</a>
+                <a href="about.html" class="block nav-link">About Us</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 lg:px-6 py-12 md:py-16">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl font-extrabold text-gray-900">Measuring Firm Complexity with Accounting Reporting Complexity (ARC)</h1>
+                
+                <div class="mt-8 prose lg:prose-lg max-w-none">
+                    <h2 class="text-2xl font-bold">Background</h2>
+                    <p>We share a new measure of firm complexity based on accounting information. Accounting is the “language of business,” and accounting disclosures of most business activities are mandated. Therefore, relying on accounting disclosures is the best approach for consistently capturing a wide range of firm activities for a large cross-section of firms. Firm complexity is measured with accounting reporting complexity (ARC) and is based on the count of accounting items disclosed in eXtensible Business Reporting Language (XBRL) filings. ARC is associated with lower financial reporting quality, higher audit fees, greater filing delays, poor analysts' performance, and various other measures that are correlated with firm complexity. ARC possesses properties that are good measures of firm complexity: First, it is “valid,” i.e., it captures the intended construct of firm complexity. Second, it is “reliable,” meaning it is objectively and consistently measured across firms and over time. Third, it captures “variation” in the construct across firms and w over time that is consistent with changes in complexity. Fourth, it is “usable,” which means that it is easily constructed for a broad population of public companies.</p>
+                    
+                    <p class="text-red-700 bg-red-100 p-4 rounded-lg"><strong>The data includes filings from 2011 through April 30, 2025. The most recent data also includes ARC of recognized (financial statements) vs. disclosed information (financial statement notes), ARC for each financial statement (e.g., Income Statement), and several additional measures. Annual and quarterly measures of ARC are included in the dataset.</strong></p>
+
+                    <h2 class="text-2xl font-bold mt-10">Relevant papers that use ARC:</h2>
+                    <p><em>If you decide to use the data, please consider citing one or more of the following papers. These papers develop, validate, provide code, review of the literature, and/or use ARC:</em></p>
+                    <ul>
+                        <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2433677" target="_blank">Hoitash, R., and Hoitash, U. 2018. Measuring Accounting Reporting Complexity with XBRL. <em>The Accounting Review</em>, Vol. 93, No. 1, pp. 259-287.</a></li>
+                        <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4098929" target="_blank">Hoitash, R., and Hoitash, U. 2022. A Measure of Firm Complexity: Data and Code. <em>Journal of Information Systems</em>. 36(2), pp. 161-172.</a></li>
+                        <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2958417" target="_blank">Hoitash, R., U. Hoitash, and A. Yezegel. 2021. Can sell-side analysts’ experience, expertise and qualifications help mitigate the adverse effects of accounting reporting complexity? Review of Quantitative Finance and Accounting. 57: 859–897.</a></li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold mt-12 text-center text-gray-800">Data and Code Downloads</h2>
+                    <p class="text-center text-lg text-gray-600">Below we provide links to files that include ARC and several related measures. The Firm Complexity files contain only the primary ARC measure (Hoitash and Hoitash 2018). The ARC files include several other measures. <span class="text-red-600 font-semibold">We are happy to help. Please feel free to reach out to us with questions!</span></p>
+
+                    <div class="mt-8 space-y-4">
+                        <a href="https://www.dropbox.com/scl/fi/4uos6se50qgqy8l1h2ndk/FirmComplexity.zip?rlkey=992k5a7f32qdhn7mtylq6a3a4&dl=0" target="_blank" class="download-link">
+                            <img src="assets/zip.png" alt="ZIP icon" class="w-10 h-10 flex-shrink-0">
+                            <div class="flex-grow">
+                                <div class="font-semibold">Firm Complexity (ARC) Data- SAS Format</div>
+                                <div class="text-sm text-gray-600">FirmComplexity.zip [1.6 MB]</div>
+                            </div>
+                        </a>
+                        <a href="https://www.dropbox.com/scl/fi/9k59fetmkf2slj6dbgffl/FirmComplexity.xlsx?rlkey=b7ak92wui2ovhjmenxaf3vuxk&dl=0" target="_blank" class="download-link">
+                             <img src="assets/xlsx.png" alt="XLSX icon" class="w-10 h-10 flex-shrink-0">
+                            <div class="flex-grow">
+                                <div class="font-semibold">Firm Complexity (ARC) Data- Excel Format</div>
+                                <div class="text-sm text-gray-600">FirmComplexity.xlsx [4.8 MB]</div>
+                            </div>
+                        </a>
+                        <a href="https://www.dropbox.com/scl/fi/pid0zcwa6sngi3270ev33/ARC.zip?rlkey=swvccp1ns3i40wi5r71ucma9v&dl=0" target="_blank" class="download-link">
+                             <img src="assets/zip.png" alt="ZIP icon" class="w-10 h-10 flex-shrink-0">
+                            <div class="flex-grow">
+                                <div class="font-semibold">ARC and Several Related Measures Data- SAS Format</div>
+                                <div class="text-sm text-gray-600">ARC.zip [29.8 MB]</div>
+                            </div>
+                        </a>
+                        <a href="https://www.dropbox.com/scl/fi/te9a52im2jl3qzxmspza3/ARC.xlsx?rlkey=jd7yacnw7ngnft9afijgfjwog&dl=0" target="_blank" class="download-link">
+                            <img src="assets/xlsx.png" alt="XLSX icon" class="w-10 h-10 flex-shrink-0">
+                            <div class="flex-grow">
+                                <div class="font-semibold">ARC and Several Related Measures Data- Excel Format</div>
+                                <div class="text-sm text-gray-600">ARC.xlsx [69.8 MB]</div>
+                            </div>
+                        </a>
+                        <a href="https://www.dropbox.com/scl/fi/g3guuqernf32xfivhiel2/ARC-Data-Dictionary.docx?rlkey=guqywmb6ykch45x0lwq66svse&dl=0" target="_blank" class="download-link">
+                            <img src="assets/docx.png" alt="DOCX icon" class="w-10 h-10 flex-shrink-0">
+                            <div class="flex-grow">
+                                <div class="font-semibold">Data Dictionary</div>
+                                <div class="text-sm text-gray-600">ARC Data Dictionary.docx [24.4 KB]</div>
+                            </div>
+                        </a>
+                        <a href="https://www.dropbox.com/scl/fi/03468t2ja4a4csqrjzyge/ARC-Firm-Complexity-SAS-Code-Macro.txt?rlkey=hdy4ayytidivws2xkcz8beqds&dl=0" target="_blank" class="download-link">
+                             <img src="assets/txt.png" alt="TXT icon" class="w-10 h-10 flex-shrink-0">
+                            <div class="flex-grow">
+                                <div class="font-semibold">SAS Code to Generate ARC and Related Measures</div>
+                                <div class="text-sm text-gray-600">ARC (Firm Complexity) SAS Code Macro.txt [14.1 KB]</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <hr class="my-12">
+
+                    <h2 class="text-3xl font-bold text-center">XBRL and Firm Complexity in the Media</h2>
+                    <div class="mt-8 grid md:grid-cols-3 gap-8">
+                        <div class="media-card">
+                            <h3 class="font-bold">Accounting Today:</h3>
+                            <p class="mt-2 flex-grow">Professors propose new measure of accounting complexity</p>
+                            <a href="https://www.accountingtoday.com/news/professors-propose-new-measure-of-accounting-complexity" target="_blank" class="media-link">Read more</a>
+                        </div>
+                         <div class="media-card">
+                            <h3 class="font-bold">FEI Daily:</h3>
+                            <p class="mt-2 flex-grow">Measuring Accounting Disclosure Complexity with XBRL</p>
+                            <a href="http://daily.financialexecutives.org/measuring-accounting-disclosure-complexity-xbrl/" target="_blank" class="media-link">Read more</a>
+                        </div>
+                         <div class="media-card">
+                            <h3 class="font-bold">Compliance Week:</h3>
+                            <p class="mt-2 flex-grow">As Complexity Rises, Quality Slides, XBRL-Based Study Says</p>
+                            <a href="https://www.complianceweek.com/as-complexity-rises-quality-slides-xbrl-based-study-says/13335.article" target="_blank" class="media-link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-gray-400 mt-16">
+            <div class="container mx-auto px-4 lg:px-6 py-6 text-center text-sm">
+                <p>&copy; <span id="year"></span> XBRL Research. All Rights Reserved.</p>
+                <p class="mt-1">A Measure of Firm Complexity (Company Complexity)</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        { // Block scope to prevent global variable conflicts
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>

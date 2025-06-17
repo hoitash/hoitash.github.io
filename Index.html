@@ -1,0 +1,191 @@
+<!-- FILE: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XBRL Research | A measure of Firm Complexity</title>
+    <meta name="description" content="A repository of processed eXtensible Business Reporting Language (XBRL) data and a measure of firm complexity.">
+    <meta name="keywords" content="Firm complexity, XBRL, Company Complexity, Accounting Complexity, Hoitash, Bentley, Northeastern, Research, XBRL data, Notes, Financial Statement, securities and exchange commission">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <div id="app" class="flex flex-col min-h-screen">
+        <!-- Header -->
+        <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+            <nav class="container mx-auto px-4 lg:px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="assets/logo.jpg" alt="XBRL Research Logo" class="h-14 w-auto">
+                    </a>
+                    <div class="hidden lg:flex items-center gap-8">
+                        <a href="index.html" class="nav-link active">XBRL Research</a>
+                        <a href="firm-complexity.html" class="nav-link">Firm Complexity</a>
+                        <a href="textual-data.html" class="nav-link">Textual Data</a>
+                        <a href="studies.html" class="nav-link">Studies Using ARC</a>
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </div>
+                    <div class="lg:hidden">
+                        <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-blue-900 px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="block nav-link active">XBRL Research</a>
+                <a href="firm-complexity.html" class="block nav-link">Firm Complexity</a>
+                <a href="textual-data.html" class="block nav-link">Textual Data</a>
+                <a href="studies.html" class="block nav-link">Studies Using ARC</a>
+                <a href="about.html" class="block nav-link">About Us</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow">
+            <!-- Hero Section -->
+            <section class="py-16 md:py-24 bg-white">
+                <div class="container mx-auto px-4 lg:px-6 text-center">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                        Research with XBRL Data, Firm Complexity, and Accounting Reporting Complexity
+                    </h1>
+                    <p class="mt-6 max-w-4xl mx-auto text-lg md:text-xl text-gray-600">
+                        This website provides a repository of processed eXtensible Business Reporting Language (XBRL) data. XBRL is an open standard for reporting structured financial information, which enables the efficient gathering of data and automated comparison of financial information over time and across firms. This website also provides access to <a href="firm-complexity.html" class="text-blue-700 font-medium hover:underline">a measure of firm complexity</a> data and SAS code for generating this measure.
+                    </p>
+                     <p class="mt-8 max-w-4xl mx-auto text-lg md:text-xl text-gray-600 font-serif italic">
+                        The paper below provides a review of the XBRL literature and discusses directions for future research.
+                    </p>
+                     <p class="mt-4 max-w-4xl mx-auto text-lg text-gray-600">
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3595401" target="_blank" class="text-blue-700 font-medium hover:underline">Hoitash, R., U. Hoitash, and L. Morris. 2021. eXtensible Business Reporting Language (XBRL): A Review and Implications for Future Research. <em>Auditing: A Journal of Practice and Theory</em> (40)2 107-132.</a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="py-16 md:py-20 bg-gray-50">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h2 class="text-2xl font-bold text-gray-900">Firm Complexity and Accounting Reporting Complexity (ARC)</h2>
+                            <p class="mt-4 text-gray-600">
+                                This data set provides several measures of firm complexity based on accounting reporting complexity (ARC). These measures have been extensively validated and have several advantages over other traditional proxies for firm complexity. The data can be downloaded in an Excel or SAS format from the accounting reporting complexity page.
+                            </p>
+                            <a href="firm-complexity.html" class="inline-block mt-6 bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-800 transition-colors">
+                                Go to Firm Complexity Page &rarr;
+                            </a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                             <h2 class="text-2xl font-bold text-gray-900">Financial Statement Notes - Textual Data</h2>
+                            <p class="mt-4 text-gray-600">
+                               XBRL enables an accurate extraction and classification of financial statement notes, a task that is otherwise hard to accomplish. Data on many prevalent footnotes, including the complete text and count of words and numbers, are available for download in SAS format from the financial statement notes-textual data page.
+                            </p>
+                             <a href="textual-data.html" class="inline-block mt-6 bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-800 transition-colors">
+                                Go to Textual Data Page &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form Section -->
+            <section class="py-16 md:py-20 bg-gray-100">
+                <div class="container mx-auto px-4 lg:px-6 max-w-7xl">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-900">Get Notified of Updates</h2>
+                        <p class="mt-3 text-lg text-gray-600">If you would like to receive e-mail notifications of updates please complete the form below.</p>
+                    </div>
+                    <!-- IMPORTANT: Replace the action URL with your own from Formspree.io -->
+                    <form id="contact-form" action="https://formspree.io/f/your_unique_id" method="POST" class="mt-8 grid grid-cols-1 gap-y-6">
+    <div class="w-full md:w-2/4">
+        <label for="name" class="form-label font-bold text-left">Name: *</label>
+        <input type="text" name="name" id="name" required class="form-input w-full">
+    </div>
+    <div class="w-full md:w-2/4">
+        <label for="email" class="form-label font-bold text-left">E-mail address: *</label>
+        <input type="email" name="email" id="email" required class="form-input w-full">
+    </div>
+    <div class="w-full md:w-3/4">
+        <label for="message" class="form-label font-bold text-left">Message:</label>
+        <textarea id="message" name="message" rows="4" class="form-input w-full"></textarea>
+    </div>
+    <div class="text-center w-full md:w-3/4">
+        <button type="submit" class="w-full sm:w-auto bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            Send Message
+        </button>
+    </div>
+</form>
+                    <div id="form-status" class="mt-6 text-center"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-gray-400">
+            <div class="container mx-auto px-4 lg:px-6 py-6 text-center text-sm">
+                <p>&copy; <span id="year"></span> XBRL Research. All Rights Reserved.</p>
+                <p class="mt-1">A Measure of Firm Complexity (Company Complexity)</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        { // Block scope to prevent global variable conflicts
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Contact Form Submission
+            const form = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+
+            async function handleSubmit(event) {
+                event.preventDefault();
+                const data = new FormData(event.target);
+                formStatus.textContent = 'Sending...';
+                formStatus.className = 'text-blue-600';
+
+                fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        formStatus.textContent = "Thanks for your submission! We'll be in touch.";
+                        formStatus.className = 'text-green-600';
+                        form.reset();
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                            formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
+                            formStatus.className = 'text-red-600';
+                            } else {
+                                formStatus.textContent = "Oops! There was a problem submitting your form.";
+                                formStatus.className = 'text-red-600';
+                            }
+                        })
+                    }
+                }).catch(error => {
+                    formStatus.textContent = "Oops! There was a problem submitting your form.";
+                    formStatus.className = 'text-red-600';
+                });
+            }
+            if(form) {
+                form.addEventListener("submit", handleSubmit);
+            }
+        }
+    </script>
+</body>
+</html>

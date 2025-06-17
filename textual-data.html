@@ -1,0 +1,121 @@
+<!-- FILE: textual-data.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textual Data on Financial Statement Notes | XBRL Research</title>
+    <meta name="description" content="Textual data of the most prevalent financial statement notes in annual 10-K filings, including text and word/number counts.">
+    <meta name="keywords" content="Firm complexity, XBRL, Textual Data, Financial Statement Notes, Hoitash, Bentley, Northeastern, Research, XBRL data, TextBlock">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <div id="app" class="flex flex-col min-h-screen">
+        <!-- Header -->
+        <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+            <nav class="container mx-auto px-4 lg:px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="assets/logo.jpg" alt="XBRL Research Logo" class="h-14 w-auto">
+                    </a>
+                    <div class="hidden lg:flex items-center gap-8">
+                        <a href="index.html" class="nav-link">XBRL Research</a>
+                        <a href="firm-complexity.html" class="nav-link">Firm Complexity</a>
+                        <a href="textual-data.html" class="nav-link active">Textual Data</a>
+                        <a href="studies.html" class="nav-link">Studies Using ARC</a>
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </div>
+                    <div class="lg:hidden">
+                        <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-blue-900 px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="block nav-link">XBRL Research</a>
+                <a href="firm-complexity.html" class="block nav-link">Firm Complexity</a>
+                <a href="textual-data.html" class="block nav-link active">Textual Data</a>
+                <a href="studies.html" class="block nav-link">Studies Using ARC</a>
+                <a href="about.html" class="block nav-link">About Us</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 lg:px-6 py-12 md:py-16">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl font-extrabold text-gray-900">Textual Data on Financial Statement Notes</h1>
+                
+                <div class="mt-8 prose lg:prose-lg max-w-none">
+                    <h2 class="text-2xl font-bold">Background</h2>
+                    <p>We share textual data of the most prevalent financial statement notes in annual 10-K filings. The data includes the text of each financial statement note along with the count of words and numbers in each note. The data is available for fiscal years between 2011-2021.</p>
+                    <p>Accurately extracting financial statement notes from financial reports is a challenging task because companies tend to use different terminologies to describe footnotes. The XBRL mandate alleviates this challenge by requiring companies to tag each footnote in its entirety using, when available, standardized TextBlock tags. For example, the most common fair value TextBlock tag is ”us-gaap:FairValueDisclosuresTextBlock” which appears across 73% of firms that report fair value (Ahn et al. 2020).</p>
+                    <p>For more details on the data, please refer to the “TextBlock data dictionary.docx” and the “TextBlock Categories.xlsx” files.</p>
+                    
+                    <h2 class="text-2xl font-bold mt-10">Relevant papers that use XBRL TextBlocks:</h2>
+                    <p><em>If you decide to use the data, please consider citing at least one of the following papers. These papers explain and/or use XBRL TextBlock tags:</em></p>
+                    <ul>
+                        <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3192536" target="_blank">Ahn, J., R. Hoitash, and U. Hoitash. 2020. Auditor Task-Specific Expertise: The Case of Fair Value Accounting. <em>The Accounting Review</em>, May 2020, Vol. 95, No. 3, pp. 1-32.</a></li>
+                        <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3595401" target="_blank">Hoitash, R., U. Hoitash, and L. Morris. 2021. eXtensible Business Reporting Language (XBRL): A Review and Implications for Future Research. <em>Auditing: A Journal of Practice and Theory 40(2):107-132</em>.</a></li>
+                        <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3635477" target="_blank">Burke, J.J., Hoitash, R., Hoitash, U. and Xiao, S.X., 2022. The Disclosure and Consequences of U.S. Critical Audit Matters.</a></li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold mt-12 text-center text-gray-800">Data and Document Downloads</h2>
+                     <p class="text-center text-lg text-gray-600">Below we provide links to footnote text data and several related documents.</p>
+                    
+                    <div class="mt-8 space-y-4">
+                        <a href="https://bentleyedu-my.sharepoint.com/:u:/g/personal/rhoitash_bentley_edu/EWAhUZwETXFHppnZEkG_wKIB-Rua7ufDDe1H10vzuIOyfA?e=EI5437" target="_blank" class="download-link">
+                            <img src="assets/zip.png" alt="ZIP icon" class="w-10 h-10 flex-shrink-0">
+                            <div class="flex-grow">
+                                <div class="font-semibold text-gray-800">Download Complete Financial Statement Notes (SAS Format)</div>
+                                <div class="text-sm text-gray-600">File size 815MB compressed, 16.4GB uncompressed</div>
+                            </div>
+                        </a>
+                        <a href="https://www.xbrlresearch.com/app/download/16338549/Textblock+Data+Dictionary.docx" class="download-link">
+                            <img src="assets/docx.png" alt="DOCX icon" class="w-10 h-10 flex-shrink-0">
+                             <div class="flex-grow">
+                                <div class="font-semibold text-gray-800">Financial Statement Notes Text - Data Dictionary</div>
+                                <div class="text-sm text-gray-600">Textblock Data Dictionary.docx [23.6 KB]</div>
+                            </div>
+                        </a>
+                        <a href="https://www.xbrlresearch.com/app/download/16338548/TextBlock+Categories.xlsx" class="download-link">
+                            <img src="assets/xlsx.png" alt="XLSX icon" class="w-10 h-10 flex-shrink-0">
+                           <div class="flex-grow">
+                               <div class="font-semibold text-gray-800">Notes Categories and TextBlocks</div>
+                               <div class="text-sm text-gray-600">TextBlock Categories.xlsx [16.2 KB]</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-gray-400 mt-16">
+            <div class="container mx-auto px-4 lg:px-6 py-6 text-center text-sm">
+                <p>&copy; <span id="year"></span> XBRL Research. All Rights Reserved.</p>
+                <p class="mt-1">A Measure of Firm Complexity (Company Complexity)</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        { // Block scope to prevent global variable conflicts
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>
