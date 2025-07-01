@@ -176,7 +176,7 @@
                             Research with XBRL Data, Firm Complexity, and Accounting Reporting Complexity
                         </h1>
                         <p class="mt-6 max-w-4xl mx-auto text-lg md:text-xl text-gray-600">
-                            This website provides a repository of processed eXtensible Business Reporting Language (XBRL) data. XBRL is an open standard for reporting structured financial information, which enables the efficient gathering of data and automated comparison of financial information over time and across firms. This website also provides access to <a data-target="page-firm-complexity" class="text-blue-700 font-medium hover:underline cursor-pointer">a measure of firm complexity</a> data and SAS code for generating this measure.
+                            This website provides a repository of processed eXtensible Business Reporting Language (XBRL) data. XBRL is an open standard for reporting structured financial information, which enables the efficient gathering of data and automated comparison of financial information over time and across firms. This website also provides access to <a href="#firm-complexity" data-target="page-firm-complexity" class="text-blue-700 font-medium hover:underline cursor-pointer">a measure of firm complexity</a> data and SAS code for generating this measure.
                         </p>
                          <p class="mt-8 max-w-4xl mx-auto text-lg md:text-xl text-gray-600 font-serif italic">
                             The paper below provides a review of the XBRL literature and discusses directions for future research.
@@ -582,83 +582,63 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         /**
-         * Switches the visible page content and updates browser history.
-         * @param {string} pageId The ID of the page to show (e.g., 'firm-complexity').
-         * @param {boolean} updateHistory Whether to push a new state to the browser's history.
+         * Main router function. Reads the URL hash and updates the view.
          */
-        function showPage(pageId, updateHistory = true) {
+        function router() {
+            const hash = location.hash.substring(1);
+            const pageId = Object.keys(pages).includes(hash) ? hash : 'home';
+            
             const targetDivId = `page-${pageId}`;
             
-            // Hide all pages to ensure a clean slate
-            allPageDivs.forEach(div => {
-                div.classList.add('page-hidden');
-            });
-
-            // Show the target page if it exists
+            // Hide all pages
+            allPageDivs.forEach(div => div.classList.add('page-hidden'));
+            
+            // Show the target page
             const targetPage = document.getElementById(targetDivId);
             if (targetPage) {
                 targetPage.classList.remove('page-hidden');
             }
-
-            // Update the active state for all navigation links
+            
+            // Update active links
             allNavLinks.forEach(link => {
                 link.classList.toggle('active', link.dataset.target === targetDivId);
             });
             
-            // Update the document title
+            // Update document title
             document.title = pages[pageId] || 'XBRL Research';
-
-            // Update the URL in the browser's address bar without reloading the page
-            if (updateHistory) {
-                history.pushState({pageId: pageId}, document.title, `#${pageId}`);
-            }
-
-            // Scroll to the top of the window for a consistent user experience
+            
+            // Scroll to top
             window.scrollTo(0, 0);
-
-            // Always hide the mobile menu after a navigation choice is made
-            if (mobileMenu) {
-                mobileMenu.classList.add('hidden');
-            }
         }
-
-        /**
-         * Handles click events for navigation.
-         */
-        function handleNavClick(event) {
-            const target = event.target.closest('[href^="#"]');
-            if (target) {
-                event.preventDefault(); // Prevent default anchor behavior
-                const pageId = target.getAttribute('href').substring(1);
-                showPage(pageId);
-            }
-        }
-        
-        /**
-         * Handles the browser's back and forward buttons.
-         */
-        function handlePopState(event) {
-            if (event.state && event.state.pageId) {
-                showPage(event.state.pageId, false);
-            } else {
-                // Handle initial load or cases where state is null
-                const hash = location.hash.substring(1);
-                const initialPage = Object.keys(pages).includes(hash) ? hash : 'home';
-                showPage(initialPage, false);
-            }
-        }
-
 
         // --- Event Listeners ---
         document.addEventListener('DOMContentLoaded', function () {
-            // Main navigation click handler
-            const appContainer = document.getElementById('app');
-            if (appContainer) {
-                appContainer.addEventListener('click', handleNavClick);
-            }
-            
+            // Handle clicks on navigation links
+            document.getElementById('app').addEventListener('click', e => {
+                const target = e.target.closest('a[href^="#"]');
+                if (!target) return;
+                
+                e.preventDefault();
+                const pageId = target.getAttribute('href').substring(1);
+                
+                // Update URL and history only if the hash is different
+                if (location.hash !== `#${pageId}`) {
+                    history.pushState({ pageId }, '', `#${pageId}`);
+                }
+                
+                router(); // Update the view
+                
+                // Close mobile menu if open
+                if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
             // Handle browser back/forward navigation
-            window.addEventListener('popstate', handlePopState);
+            window.addEventListener('popstate', router);
+
+            // Initial page load
+            router();
 
             // Mobile menu toggle button
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -715,11 +695,6 @@
             if (form) {
                 form.addEventListener("submit", handleSubmit);
             }
-
-            // Initialize the page view based on the URL hash
-            const hash = location.hash.substring(1);
-            const initialPage = Object.keys(pages).includes(hash) ? hash : 'home';
-            showPage(initialPage, false); // Don't update history on initial load
         });
     })();
     </script>
