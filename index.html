@@ -3,10 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- The title will be updated dynamically by JavaScript -->
-    <title>XBRL Research | A measure of Firm Complexity</title>
-    <meta name="description" content="A repository of processed eXtensible Business Reporting Language (XBRL) data and a measure of firm complexity.">
-    <meta name="keywords" content="Firm complexity, XBRL, Company Complexity, Accounting Complexity, Hoitash, Bentley, Northeastern, Research, XBRL data, Notes, Financial Statement, securities and exchange commission, studies, papers, ARC">
+    
+    <!-- SEO Meta Tags -->
+    <title>XBRL Research | Firm Complexity & Textual Data</title>
+    <meta name="description" content="A repository for academic research providing processed XBRL data, a measure of firm complexity (ARC), and textual data from financial reports for use in accounting and finance research.">
+    <meta name="keywords" content="Firm complexity, XBRL, Company Complexity, Accounting Complexity, Hoitash, Bentley, Northeastern, Research, XBRL data, Notes, Financial Statement, securities and exchange commission, studies, papers, ARC, Analytext, Textual Analysis, Financial Data">
+    <link rel="canonical" href="https://www.xbrlresearch.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.xbrlresearch.com/">
+    <meta property="og:title" content="XBRL Research | Firm Complexity & Textual Data">
+    <meta property="og:description" content="A repository for academic research providing processed XBRL data, a measure of firm complexity (ARC), and textual data from financial reports.">
+    <meta property="og:image" content="https://www.xbrlresearch.com/assets/logo.jpg">
+    <meta property="og:site_name" content="XBRL Research">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.xbrlresearch.com/">
+    <meta property="twitter:title" content="XBRL Research | Firm Complexity & Textual Data">
+    <meta property="twitter:description" content="A repository for academic research providing processed XBRL data, a measure of firm complexity (ARC), and textual data from financial reports.">
+    <meta property="twitter:image" content="https://www.xbrlresearch.com/assets/logo.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "XBRL Research",
+      "url": "https://www.xbrlresearch.com/",
+      "description": "A repository for academic research providing processed XBRL data, a measure of firm complexity (ARC), and textual data from financial reports for use in accounting and finance research.",
+      "keywords": "Firm complexity, XBRL, Company Complexity, Accounting Complexity, Hoitash, Bentley, Northeastern, Research, XBRL data, Notes, Financial Statement, ARC, Textual Analysis, Financial Data",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Udi Hoitash",
+          "affiliation": "Northeastern University",
+          "sameAs": "https://www.damore-mckim.northeastern.edu/faculty/h/hoitash-udi"
+        },
+        {
+          "@type": "Person",
+          "name": "Rani Hoitash",
+          "affiliation": "Bentley University",
+          "sameAs": "https://faculty.bentley.edu/details.asp?uname=rhoitash"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Styles and Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
@@ -32,13 +77,6 @@
         }
 
         @layer components {
-            .nav-link {
-                @apply text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer;
-            }
-            .nav-link.active {
-                @apply text-white font-semibold;
-            }
-            
             .form-label {
                 @apply block text-sm font-medium text-gray-700;
             }
@@ -62,6 +100,12 @@
             }
         }
         
+        /* Custom styles for navigation links */
+        .nav-link.active {
+            color: white;
+            font-weight: 600; /* semibold */
+        }
+
         /* Animated underline for nav links */
         .nav-link::after {
             content: '';
@@ -96,11 +140,12 @@
                         <img src="assets/logo.jpg" alt="XBRL Research Logo" class="h-14 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/56x56/FFFFFF/000000?text=Logo';">
                     </a>
                     <div id="desktop-menu" class="hidden lg:flex items-center gap-8">
-                        <a data-target="page-home" class="nav-link active">XBRL Research</a>
-                        <a data-target="page-firm-complexity" class="nav-link">Firm Complexity</a>
-                        <a data-target="page-textual-data" class="nav-link">Textual Data</a>
-                        <a data-target="page-studies" class="nav-link">Studies Using ARC</a>
-                        <a data-target="page-about" class="nav-link">About Us</a>
+                        <a data-target="page-home" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer active">XBRL Research</a>
+                        <a data-target="page-firm-complexity" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Firm Complexity</a>
+                        <a data-target="page-textual-data" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Textual Data</a>
+                        <a data-target="page-studies" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Studies Using ARC</a>
+                        <a data-target="page-analytext" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Analytext.com</a>
+                        <a data-target="page-about" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">About Us</a>
                     </div>
                     <div class="lg:hidden">
                         <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
@@ -111,11 +156,12 @@
             </nav>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden lg:hidden bg-blue-900 px-4 pt-2 pb-4 space-y-2">
-                <a data-target="page-home" class="block nav-link active">XBRL Research</a>
-                <a data-target="page-firm-complexity" class="block nav-link">Firm Complexity</a>
-                <a data-target="page-textual-data" class="block nav-link">Textual Data</a>
-                <a data-target="page-studies" class="block nav-link">Studies Using ARC</a>
-                <a data-target="page-about" class="block nav-link">About Us</a>
+                <a data-target="page-home" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer active">XBRL Research</a>
+                <a data-target="page-firm-complexity" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Firm Complexity</a>
+                <a data-target="page-textual-data" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Textual Data</a>
+                <a data-target="page-studies" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Studies Using ARC</a>
+                <a data-target="page-analytext" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Analytext.com</a>
+                <a data-target="page-about" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">About Us</a>
             </div>
         </header>
 
@@ -206,9 +252,9 @@
                             <h2 class="text-2xl font-bold mt-10">Relevant papers that use ARC:</h2>
                             <p><em>If you decide to use the data, please consider citing one or more of the following papers. These papers develop, validate, provide code, review of the literature, and/or use ARC:</em></p>
                             <ul>
-                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2433677" target="_blank">Hoitash, R., and Hoitash, U. 2018. Measuring Accounting Reporting Complexity with XBRL. <em>The Accounting Review</em>, Vol. 93, No. 1, pp. 259-287.</a></li>
-                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4098929" target="_blank">Hoitash, R., and Hoitash, U. 2022. A Measure of Firm Complexity: Data and Code. <em>Journal of Information Systems</em>. 36(2), pp. 161-172.</a></li>
-                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2958417" target="_blank">Hoitash, R., U. Hoitash, and A. Yezegel. 2021. Can sell-side analysts’ experience, expertise and qualifications help mitigate the adverse effects of accounting reporting complexity? Review of Quantitative Finance and Accounting. 57: 859–897.</a></li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2433677" target="_blank" class="text-blue-700 hover:text-blue-800">Hoitash, R., and Hoitash, U. 2018. Measuring Accounting Reporting Complexity with XBRL. <em>The Accounting Review</em>, Vol. 93, No. 1, pp. 259-287.</a></li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4098929" target="_blank" class="text-blue-700 hover:text-blue-800">Hoitash, R., and Hoitash, U. 2022. A Measure of Firm Complexity: Data and Code. <em>Journal of Information Systems</em>. 36(2), pp. 161-172.</a></li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2958417" target="_blank" class="text-blue-700 hover:text-blue-800">Hoitash, R., U. Hoitash, and A. Yezegel. 2021. Can sell-side analysts’ experience, expertise and qualifications help mitigate the adverse effects of accounting reporting complexity? Review of Quantitative Finance and Accounting. 57: 859–897.</a></li>
                             </ul>
                             <h2 class="text-2xl font-bold mt-12 text-center text-gray-800">Data and Code Downloads</h2>
                             <p class="text-center text-lg text-gray-600">Below we provide links to files that include ARC and several related measures. The Firm Complexity files contain only the primary ARC measure (Hoitash and Hoitash 2018). The ARC files include several other measures. <span class="text-red-600 font-semibold">We are happy to help. Please feel free to reach out to us with questions!</span></p>
@@ -293,10 +339,10 @@
                             <h2 class="text-2xl font-bold mt-10">Relevant papers that use XBRL TextBlocks:</h2>
                             <p><em><b> If you decide to use the data, please consider citing at least one of the following papers. These papers explain and/or use XBRL TextBlock tags:</b></em></p>
                             <ul>
-                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3192536" target="_blank">Ahn, J., R. Hoitash, and U. Hoitash. 2020. Auditor Task-Specific Expertise: The Case of Fair Value Accounting. <em>The Accounting Review</em>, May 2020, Vol. 95, No. 3, pp. 1-32.</a></li>
-                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3595401" target="_blank">Hoitash, R., U. Hoitash, and L. Morris. 2021. eXtensible Business Reporting Language (XBRL): A Review and Implications for Future Research. <em>Auditing: A Journal of Practice and Theory 40(2):107-132</em>.</a></li>
-                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3635477" target="_blank">Burke, J.J., Hoitash, R., Hoitash, U. and Xiao, S., 2023. The disclosure and consequences of US critical audit matters. <em>The Accounting Review </em>, 98(2), pp.59-95.</a></li>
-                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4484489" target="_blank">Burke, J.J., Hoitash, R., Hoitash, U. and Xiao, S., 2025 Financial Reporting Topic Classification: A Domain-Specific Application of Generative Small Language Models. </a> </li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3192536" target="_blank" class="text-blue-700 hover:text-blue-800">Ahn, J., R. Hoitash, and U. Hoitash. 2020. Auditor Task-Specific Expertise: The Case of Fair Value Accounting. <em>The Accounting Review</em>, May 2020, Vol. 95, No. 3, pp. 1-32.</a></li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3595401" target="_blank" class="text-blue-700 hover:text-blue-800">Hoitash, R., U. Hoitash, and L. Morris. 2021. eXtensible Business Reporting Language (XBRL): A Review and Implications for Future Research. <em>Auditing: A Journal of Practice and Theory 40(2):107-132</em>.</a></li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3635477" target="_blank" class="text-blue-700 hover:text-blue-800">Burke, J.J., Hoitash, R., Hoitash, U. and Xiao, S., 2023. The disclosure and consequences of US critical audit matters. <em>The Accounting Review </em>, 98(2), pp.59-95.</a></li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4484489" target="_blank" class="text-blue-700 hover:text-blue-800">Burke, J.J., Hoitash, R., Hoitash, U. and Xiao, S., 2025 Financial Reporting Topic Classification: A Domain-Specific Application of Generative Small Language Models. </a> </li>
                             </ul>
                             <h2 class="text-2xl font-bold mt-12 text-center text-gray-800">Data and Document Downloads</h2>
                              <p class="text-center text-lg text-gray-600">Below we provide links to footnote text data and several related documents.</p>
@@ -371,8 +417,89 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Page 5: Analytext.com -->
+            <div id="page-analytext" class="page-content page-hidden">
+                 <div class="bg-white">
+                    <!-- Hero Section -->
+                    <div class="relative bg-gradient-to-br from-blue-50 to-indigo-100 pt-16 pb-20 text-center">
+                        <div class="container mx-auto px-4 lg:px-6">
+                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
+                                Unlock the Power of Financial Text with <span class="text-blue-600">Analytext.com</span>
+                            </h1>
+                            <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-600">
+                                Your ultimate resource for research-ready textual data from corporate financial reports. Stop cleaning, start analyzing.
+                            </p>
+                            <a href="https://www.analytext.com" target="_blank" class="inline-block mt-8 bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-lg">
+                                Visit Analytext.com &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Features Section -->
+                    <div class="py-16 lg:py-24 bg-gray-50">
+                        <div class="container mx-auto px-4 lg:px-6">
+                            <div class="text-center">
+                                <h2 class="text-3xl font-extrabold text-gray-900">What We Provide</h2>
+                                <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+                                    Everything you need to accelerate your textual analysis research.
+                                </p>
+                            </div>
+                            <div class="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+                                <!-- Feature 1 -->
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mx-auto">
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
+                                    </div>
+                                    <h3 class="mt-5 text-xl font-bold text-gray-900 text-center">Ready-to-Use Datasets</h3>
+                                    <p class="mt-2 text-base text-gray-500 text-center">
+                                        Access decades of parsed textual data from 10-Ks, 10-Qs, and 8-Ks. Data is cleaned and structured for immediate use in Stata, SAS, R, or Python.
+                                    </p>
+                                </div>
+                                <!-- Feature 2 -->
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mx-auto">
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                                    </div>
+                                    <h3 class="mt-5 text-xl font-bold text-gray-900 text-center">Powerful Linguistic Features</h3>
+                                    <p class="mt-2 text-base text-gray-500 text-center">
+                                        Leverage pre-computed metrics including readability scores (Fog, Flesch-Kincaid), sentiment analysis, word counts, and topic modeling data.
+                                    </p>
+                                </div>
+                                <!-- Feature 3 -->
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mx-auto">
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l-4 4-4-4 4-4" /></svg>
+                                    </div>
+                                    <h3 class="mt-5 text-xl font-bold text-gray-900 text-center">Python Code & Tutorials</h3>
+                                    <p class="mt-2 text-base text-gray-500 text-center">
+                                        Get started quickly with our open-source Python library and detailed tutorials for data processing, merging, and analysis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paper Citation Section -->
+                    <div class="bg-indigo-50">
+                        <div class="container mx-auto px-4 lg:px-6 py-12">
+                            <div class="text-center">
+                                <h2 class="text-2xl font-bold text-gray-900">Based on Academic Research</h2>
+                                <p class="mt-3 text-lg text-gray-600">
+                                    Our data repository and tools are built upon rigorous academic research. Please cite the following paper if you use our data:
+                                </p>
+                                <blockquote class="mt-6 p-4 bg-white border-l-4 border-blue-500 shadow-sm">
+                                    <p class="text-lg italic text-gray-800">
+                                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5212626" target="_blank" class="text-blue-700 hover:text-blue-800 font-semibold">Codesso, M., Hoitash, R., & Hoitash, U. (2025). Textual Financial Data Repository and Python Code for Machine Learning, Al, and Textual Analyses.</a>
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Page 5: About Us -->
+            <!-- Page 6: About Us -->
             <div id="page-about" class="page-content page-hidden">
                 <div class="bg-white">
                     <div class="container mx-auto px-4 lg:px-6 py-12 md:py-16">
@@ -446,6 +573,7 @@
             'page-firm-complexity': 'Firm Complexity | XBRL Research',
             'page-textual-data': 'Textual Data on Financial Statement Notes | XBRL Research',
             'page-studies': 'Studies Using ARC | XBRL Research',
+            'page-analytext': 'Analytext.com | Textual Financial Data',
             'page-about': 'About Us | XBRL Research'
         };
 
@@ -571,4 +699,4 @@
     })();
     </script>
 </body>
-</ht
+</html>
