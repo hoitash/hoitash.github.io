@@ -136,16 +136,16 @@
         <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
             <nav class="container mx-auto px-4 lg:px-6 py-4">
                 <div class="flex justify-between items-center">
-                    <a data-target="page-home" class="flex items-center gap-3 cursor-pointer">
+                    <a href="#home" data-target="page-home" class="flex items-center gap-3 cursor-pointer">
                         <img src="assets/logo.jpg" alt="XBRL Research Logo" class="h-14 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/56x56/FFFFFF/000000?text=Logo';">
                     </a>
                     <div id="desktop-menu" class="hidden lg:flex items-center gap-8">
-                        <a data-target="page-home" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer active">XBRL Research</a>
-                        <a data-target="page-firm-complexity" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Firm Complexity</a>
-                        <a data-target="page-textual-data" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Textual Data</a>
-                        <a data-target="page-studies" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Studies Using ARC</a>
-                        <a data-target="page-analytext" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Analytext.com</a>
-                        <a data-target="page-about" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">About Us</a>
+                        <a href="#home" data-target="page-home" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer active">XBRL Research</a>
+                        <a href="#firm-complexity" data-target="page-firm-complexity" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Firm Complexity</a>
+                        <a href="#textual-data" data-target="page-textual-data" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Textual Data</a>
+                        <a href="#studies" data-target="page-studies" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Studies Using ARC</a>
+                        <a href="#analytext" data-target="page-analytext" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Analytext.com</a>
+                        <a href="#about" data-target="page-about" class="nav-link text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">About Us</a>
                     </div>
                     <div class="lg:hidden">
                         <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
@@ -156,12 +156,12 @@
             </nav>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden lg:hidden bg-blue-900 px-4 pt-2 pb-4 space-y-2">
-                <a data-target="page-home" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer active">XBRL Research</a>
-                <a data-target="page-firm-complexity" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Firm Complexity</a>
-                <a data-target="page-textual-data" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Textual Data</a>
-                <a data-target="page-studies" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Studies Using ARC</a>
-                <a data-target="page-analytext" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Analytext.com</a>
-                <a data-target="page-about" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">About Us</a>
+                <a href="#home" data-target="page-home" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer active">XBRL Research</a>
+                <a href="#firm-complexity" data-target="page-firm-complexity" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Firm Complexity</a>
+                <a href="#textual-data" data-target="page-textual-data" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Textual Data</a>
+                <a href="#studies" data-target="page-studies" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Studies Using ARC</a>
+                <a href="#analytext" data-target="page-analytext" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">Analytext.com</a>
+                <a href="#about" data-target="page-about" class="nav-link block text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer">About Us</a>
             </div>
         </header>
 
@@ -194,7 +194,7 @@
                                 <p class="mt-4 text-gray-600">
                                     This data set provides several measures of firm complexity based on accounting reporting complexity (ARC). These measures have been extensively validated and have several advantages over other traditional proxies for firm complexity. The data can be downloaded in an Excel or SAS format from the accounting reporting complexity page.
                                 </p>
-                                <a data-target="page-firm-complexity" class="inline-block mt-6 bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-800 transition-colors cursor-pointer">
+                                <a href="#firm-complexity" data-target="page-firm-complexity" class="inline-block mt-6 bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-800 transition-colors cursor-pointer">
                                     Go to Firm Complexity Page &rarr;
                                 </a>
                             </div>
@@ -203,7 +203,7 @@
                                 <p class="mt-4 text-gray-600">
                                    XBRL enables an accurate extraction and classification of financial statement notes, a task that is otherwise hard to accomplish. Data on many prevalent footnotes, including the complete text and count of words and numbers, are available for download in SAS format from the financial statement notes-textual data page.
                                 </p>
-                                 <a data-target="page-textual-data" class="inline-block mt-6 bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-800 transition-colors cursor-pointer">
+                                 <a href="#textual-data" data-target="page-textual-data" class="inline-block mt-6 bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-800 transition-colors cursor-pointer">
                                     Go to Textual Data Page &rarr;
                                 </a>
                             </div>
@@ -569,12 +569,12 @@
     (function() {
         // --- Page and Navigation State ---
         const pages = {
-            'page-home': 'XBRL Research | A measure of Firm Complexity',
-            'page-firm-complexity': 'Firm Complexity | XBRL Research',
-            'page-textual-data': 'Textual Data on Financial Statement Notes | XBRL Research',
-            'page-studies': 'Studies Using ARC | XBRL Research',
-            'page-analytext': 'Analytext.com | Textual Financial Data',
-            'page-about': 'About Us | XBRL Research'
+            'home': 'XBRL Research | A measure of Firm Complexity',
+            'firm-complexity': 'Firm Complexity | XBRL Research',
+            'textual-data': 'Textual Data on Financial Statement Notes | XBRL Research',
+            'studies': 'Studies Using ARC | XBRL Research',
+            'analytext': 'Analytext.com | Textual Financial Data',
+            'about': 'About Us | XBRL Research'
         };
 
         const allPageDivs = document.querySelectorAll('.page-content');
@@ -582,28 +582,36 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         /**
-         * Switches the visible page content.
-         * @param {string} targetId The ID of the page content div to show.
+         * Switches the visible page content and updates browser history.
+         * @param {string} pageId The ID of the page to show (e.g., 'firm-complexity').
+         * @param {boolean} updateHistory Whether to push a new state to the browser's history.
          */
-        function showPage(targetId) {
+        function showPage(pageId, updateHistory = true) {
+            const targetDivId = `page-${pageId}`;
+            
             // Hide all pages to ensure a clean slate
             allPageDivs.forEach(div => {
                 div.classList.add('page-hidden');
             });
 
             // Show the target page if it exists
-            const targetPage = document.getElementById(targetId);
+            const targetPage = document.getElementById(targetDivId);
             if (targetPage) {
                 targetPage.classList.remove('page-hidden');
             }
 
             // Update the active state for all navigation links
             allNavLinks.forEach(link => {
-                link.classList.toggle('active', link.dataset.target === targetId);
+                link.classList.toggle('active', link.dataset.target === targetDivId);
             });
             
-            // Update the document title for better browser history and tab identification
-            document.title = pages[targetId] || 'XBRL Research';
+            // Update the document title
+            document.title = pages[pageId] || 'XBRL Research';
+
+            // Update the URL in the browser's address bar without reloading the page
+            if (updateHistory) {
+                history.pushState({pageId: pageId}, document.title, `#${pageId}`);
+            }
 
             // Scroll to the top of the window for a consistent user experience
             window.scrollTo(0, 0);
@@ -616,26 +624,41 @@
 
         /**
          * Handles click events for navigation.
-         * Uses event delegation on the main app container for efficiency.
-         * @param {Event} event The click event object.
          */
         function handleNavClick(event) {
-            const target = event.target.closest('[data-target]');
+            const target = event.target.closest('[href^="#"]');
             if (target) {
                 event.preventDefault(); // Prevent default anchor behavior
-                const targetId = target.dataset.target;
-                showPage(targetId);
+                const pageId = target.getAttribute('href').substring(1);
+                showPage(pageId);
+            }
+        }
+        
+        /**
+         * Handles the browser's back and forward buttons.
+         */
+        function handlePopState(event) {
+            if (event.state && event.state.pageId) {
+                showPage(event.state.pageId, false);
+            } else {
+                // Handle initial load or cases where state is null
+                const hash = location.hash.substring(1);
+                const initialPage = Object.keys(pages).includes(hash) ? hash : 'home';
+                showPage(initialPage, false);
             }
         }
 
-        // --- Event Listeners ---
 
-        // Listen for DOM content to be fully loaded before running scripts
+        // --- Event Listeners ---
         document.addEventListener('DOMContentLoaded', function () {
+            // Main navigation click handler
             const appContainer = document.getElementById('app');
             if (appContainer) {
                 appContainer.addEventListener('click', handleNavClick);
             }
+            
+            // Handle browser back/forward navigation
+            window.addEventListener('popstate', handlePopState);
 
             // Mobile menu toggle button
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -693,8 +716,10 @@
                 form.addEventListener("submit", handleSubmit);
             }
 
-            // Initialize the page view
-            showPage('page-home');
+            // Initialize the page view based on the URL hash
+            const hash = location.hash.substring(1);
+            const initialPage = Object.keys(pages).includes(hash) ? hash : 'home';
+            showPage(initialPage, false); // Don't update history on initial load
         });
     })();
     </script>
