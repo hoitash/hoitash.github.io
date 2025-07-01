@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The title will be updated dynamically by JavaScript -->
+    <title>XBRL Research | A measure of Firm Complexity</title>
+    <meta name="description" content="A repository of processed eXtensible Business Reporting Language (XBRL) data and a measure of firm complexity.">
+    <meta name="keywords" content="Firm complexity, XBRL, Company Complexity, Accounting Complexity, Hoitash, Bentley, Northeastern, Research, XBRL data, Notes, Financial Statement, securities and exchange commission, studies, papers, ARC">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+    <style>
+        /* Embedded CSS from style.css */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            body {
+                font-family: 'Inter', sans-serif;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-bold text-gray-900;
+            }
+            a {
+                @apply text-blue-700 hover:text-blue-800 transition-colors duration-200;
+            }
+            .prose a {
+                @apply text-blue-700 hover:text-blue-800;
+            }
+        }
+
+        @layer components {
+            .nav-link {
+                @apply text-base font-medium text-gray-300 hover:text-white py-2 transition-colors duration-200 relative no-underline cursor-pointer;
+            }
+            .nav-link.active {
+                @apply text-white font-semibold;
+            }
+            
+            .form-label {
+                @apply block text-sm font-medium text-gray-700;
+            }
+
+            .form-input {
+                @apply block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md transition-shadow;
+            }
+
+            .download-link {
+                @apply flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-200 cursor-pointer no-underline text-gray-800;
+            }
+            .download-arrow {
+                @apply ml-auto text-gray-400 text-2xl group-hover:text-blue-600 transition-colors;
+            }
+            
+            .media-card {
+                @apply flex flex-col p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300;
+            }
+            .media-link {
+                @apply inline-block mt-4 text-sm font-semibold text-blue-700 hover:text-blue-800;
+            }
+        }
+        
+        /* Animated underline for nav links */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #60a5fa; /* Tailwind blue-400 */
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Utility class to hide pages */
+        .page-hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 text-lg leading-relaxed">
+
+    <div id="app" class="flex flex-col min-h-screen">
+        <!-- Header -->
+        <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+            <nav class="container mx-auto px-4 lg:px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <a data-target="page-home" class="flex items-center gap-3 cursor-pointer">
+                        <img src="assets/logo.jpg" alt="XBRL Research Logo" class="h-14 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/56x56/FFFFFF/000000?text=Logo';">
+                    </a>
+                    <div id="desktop-menu" class="hidden lg:flex items-center gap-8">
+                        <a data-target="page-home" class="nav-link active">XBRL Research</a>
+                        <a data-target="page-firm-complexity" class="nav-link">Firm Complexity</a>
+                        <a data-target="page-textual-data" class="nav-link">Textual Data</a>
+                        <a data-target="page-studies" class="nav-link">Studies Using ARC</a>
+                        <a data-target="page-about" class="nav-link">About Us</a>
+                    </div>
+                    <div class="lg:hidden">
+                        <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-blue-900 px-4 pt-2 pb-4 space-y-2">
+                <a data-target="page-home" class="block nav-link active">XBRL Research</a>
+                <a data-target="page-firm-complexity" class="block nav-link">Firm Complexity</a>
+                <a data-target="page-textual-data" class="block nav-link">Textual Data</a>
+                <a data-target="page-studies" class="block nav-link">Studies Using ARC</a>
+                <a data-target="page-about" class="block nav-link">About Us</a>
+            </div>
+        </header>
+
+        <!-- Main Content: Container for all pages -->
+        <main class="flex-grow">
+
+            <!-- Page 1: XBRL Research (Home) -->
+            <div id="page-home" class="page-content">
+                <section class="py-16 md:py-24 bg-white">
+                    <div class="container mx-auto px-4 lg:px-6 text-center">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                            Research with XBRL Data, Firm Complexity, and Accounting Reporting Complexity
+                        </h1>
+                        <p class="mt-6 max-w-4xl mx-auto text-lg md:text-xl text-gray-600">
+                            This website provides a repository of processed eXtensible Business Reporting Language (XBRL) data. XBRL is an open standard for reporting structured financial information, which enables the efficient gathering of data and automated comparison of financial information over time and across firms. This website also provides access to <a data-target="page-firm-complexity" class="text-blue-700 font-medium hover:underline cursor-pointer">a measure of firm complexity</a> data and SAS code for generating this measure.
+                        </p>
+                         <p class="mt-8 max-w-4xl mx-auto text-lg md:text-xl text-gray-600 font-serif italic">
+                            The paper below provides a review of the XBRL literature and discusses directions for future research.
+                        </p>
+                         <p class="mt-4 max-w-4xl mx-auto text-lg text-gray-600">
+                            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3595401" target="_blank" class="text-blue-700 font-medium hover:underline">Hoitash, R., U. Hoitash, and L. Morris. 2021. eXtensible Business Reporting Language (XBRL): A Review and Implications for Future Research. <em>Auditing: A Journal of Practice and Theory</em> (40)2 107-132.</a>
+                        </p>
+                    </div>
+                </section>
+                <section class="py-16 md:py-20 bg-gray-50">
+                    <div class="container mx-auto px-4 lg:px-6">
+                        <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <h2 class="text-2xl font-bold text-gray-900">Firm Complexity and Accounting Reporting Complexity (ARC)</h2>
+                                <p class="mt-4 text-gray-600">
+                                    This data set provides several measures of firm complexity based on accounting reporting complexity (ARC). These measures have been extensively validated and have several advantages over other traditional proxies for firm complexity. The data can be downloaded in an Excel or SAS format from the accounting reporting complexity page.
+                                </p>
+                                <a data-target="page-firm-complexity" class="inline-block mt-6 bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-800 transition-colors cursor-pointer">
+                                    Go to Firm Complexity Page &rarr;
+                                </a>
+                            </div>
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                                 <h2 class="text-2xl font-bold text-gray-900">Financial Statement Notes - Textual Data</h2>
+                                <p class="mt-4 text-gray-600">
+                                   XBRL enables an accurate extraction and classification of financial statement notes, a task that is otherwise hard to accomplish. Data on many prevalent footnotes, including the complete text and count of words and numbers, are available for download in SAS format from the financial statement notes-textual data page.
+                                </p>
+                                 <a data-target="page-textual-data" class="inline-block mt-6 bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-800 transition-colors cursor-pointer">
+                                    Go to Textual Data Page &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-16 md:py-20 bg-gray-100">
+                    <div class="container mx-auto px-4 lg:px-6 max-w-7xl">
+                        <div class="text-center mb-8">
+                            <h2 class="text-3xl font-bold text-gray-900">Get Notified of Updates</h2>
+                            <p class="mt-3 text-lg text-gray-600">If you would like to receive e-mail notifications of updates please complete the form below.</p>
+                        </div>
+                        <form id="contact-form" action="https://formspree.io/f/xjkroabo" method="POST" class="mt-8 grid grid-cols-1 gap-y-6">
+                            <div class="w-full md:w-2/4">
+                                <label for="name" class="form-label font-bold text-left">Name: *</label>
+                                <input type="text" name="name" id="name" required class="form-input w-full">
+                            </div>
+                            <div class="w-full md:w-2/4">
+                                <label for="email" class="form-label font-bold text-left">E-mail address: *</label>
+                                <input type="email" name="email" id="email" required class="form-input w-full">
+                            </div>
+                            <div class="w-full md:w-3/4">
+                                <label for="message" class="form-label font-bold text-left">Message:</label>
+                                <textarea id="message" name="message" rows="4" class="form-input w-full"></textarea>
+                            </div>
+                            <div class="text-center w-full md:w-3/4">
+                                <button type="submit" class="w-full sm:w-auto bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                        <div id="form-status" class="mt-6 text-center"></div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Page 2: Firm Complexity -->
+            <div id="page-firm-complexity" class="page-content page-hidden">
+                <div class="container mx-auto px-4 lg:px-6 py-12 md:py-16">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-4xl font-extrabold text-gray-900">Measuring Firm Complexity with Accounting Reporting Complexity (ARC)</h1>
+                        <div class="mt-8 prose lg:prose-lg max-w-none">
+                            <h2 class="text-2xl font-bold">Background</h2>
+                            <p>We share a new measure of firm complexity based on accounting information. Accounting is the “language of business,” and accounting disclosures of most business activities are mandated. Therefore, relying on accounting disclosures is the best approach for consistently capturing a wide range of firm activities for a large cross-section of firms. Firm complexity is measured with accounting reporting complexity (ARC) and is based on the count of accounting items disclosed in eXtensible Business Reporting Language (XBRL) filings. ARC is associated with lower financial reporting quality, higher audit fees, greater filing delays, poor analysts' performance, and various other measures that are correlated with firm complexity. ARC possesses properties that are good measures of firm complexity: First, it is “valid,” i.e., it captures the intended construct of firm complexity. Second, it is “reliable,” meaning it is objectively and consistently measured across firms and over time. Third, it captures “variation” in the construct across firms and over time that is consistent with changes in complexity. Fourth, it is “usable,” which means that it is easily constructed for a broad population of public companies.</p>
+                            <p class="text-red-700 bg-red-100 p-4 rounded-lg"><strong>The data includes filings from 2011 through April 30, 2025. The most recent data also includes ARC of recognized (financial statements) vs. disclosed information (financial statement notes), ARC for each financial statement (e.g., Income Statement), and several additional measures. Annual and quarterly measures of ARC are included in the dataset.</strong></p>
+                            <h2 class="text-2xl font-bold mt-10">Relevant papers that use ARC:</h2>
+                            <p><em>If you decide to use the data, please consider citing one or more of the following papers. These papers develop, validate, provide code, review of the literature, and/or use ARC:</em></p>
+                            <ul>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2433677" target="_blank">Hoitash, R., and Hoitash, U. 2018. Measuring Accounting Reporting Complexity with XBRL. <em>The Accounting Review</em>, Vol. 93, No. 1, pp. 259-287.</a></li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4098929" target="_blank">Hoitash, R., and Hoitash, U. 2022. A Measure of Firm Complexity: Data and Code. <em>Journal of Information Systems</em>. 36(2), pp. 161-172.</a></li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2958417" target="_blank">Hoitash, R., U. Hoitash, and A. Yezegel. 2021. Can sell-side analysts’ experience, expertise and qualifications help mitigate the adverse effects of accounting reporting complexity? Review of Quantitative Finance and Accounting. 57: 859–897.</a></li>
+                            </ul>
+                            <h2 class="text-2xl font-bold mt-12 text-center text-gray-800">Data and Code Downloads</h2>
+                            <p class="text-center text-lg text-gray-600">Below we provide links to files that include ARC and several related measures. The Firm Complexity files contain only the primary ARC measure (Hoitash and Hoitash 2018). The ARC files include several other measures. <span class="text-red-600 font-semibold">We are happy to help. Please feel free to reach out to us with questions!</span></p>
+                            <div class="mt-8 space-y-4">
+                                <a href="https://www.dropbox.com/scl/fi/4uos6se50qgqy8l1h2ndk/FirmComplexity.zip?rlkey=992k5a7f32qdhn7mtylq6a3a4&dl=0" target="_blank" class="download-link">
+                                    <img src="assets/zip.png" alt="ZIP icon" class="w-10 h-10 flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FFFFFF/000000?text=ZIP';">
+                                    <div class="flex-grow">
+                                        <div class="font-semibold">Firm Complexity (ARC) Data- SAS Format</div>
+                                        <div class="text-sm text-gray-600">FirmComplexity.zip [1.6 MB]</div>
+                                    </div>
+                                </a>
+                                <a href="https://www.dropbox.com/scl/fi/9k59fetmkf2slj6dbgffl/FirmComplexity.xlsx?rlkey=b7ak92wui2ovhjmenxaf3vuxk&dl=0" target="_blank" class="download-link">
+                                     <img src="assets/xlsx.png" alt="XLSX icon" class="w-10 h-10 flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FFFFFF/000000?text=XLSX';">
+                                    <div class="flex-grow">
+                                        <div class="font-semibold">Firm Complexity (ARC) Data- Excel Format</div>
+                                        <div class="text-sm text-gray-600">FirmComplexity.xlsx [4.8 MB]</div>
+                                    </div>
+                                </a>
+                                <a href="https://www.dropbox.com/scl/fi/pid0zcwa6sngi3270ev33/ARC.zip?rlkey=swvccp1ns3i40wi5r71ucma9v&dl=0" target="_blank" class="download-link">
+                                     <img src="assets/zip.png" alt="ZIP icon" class="w-10 h-10 flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FFFFFF/000000?text=ZIP';">
+                                    <div class="flex-grow">
+                                        <div class="font-semibold">ARC and Several Related Measures Data- SAS Format</div>
+                                        <div class="text-sm text-gray-600">ARC.zip [29.8 MB]</div>
+                                    </div>
+                                </a>
+                                <a href="https://www.dropbox.com/scl/fi/te9a52im2jl3qzxmspza3/ARC.xlsx?rlkey=jd7yacnw7ngnft9afijgfjwog&dl=0" target="_blank" class="download-link">
+                                    <img src="assets/xlsx.png" alt="XLSX icon" class="w-10 h-10 flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FFFFFF/000000?text=XLSX';">
+                                    <div class="flex-grow">
+                                        <div class="font-semibold">ARC and Several Related Measures Data- Excel Format</div>
+                                        <div class="text-sm text-gray-600">ARC.xlsx [69.8 MB]</div>
+                                    </div>
+                                </a>
+                                <a href="https://www.dropbox.com/scl/fi/g3guuqernf32xfivhiel2/ARC-Data-Dictionary.docx?rlkey=guqywmb6ykch45x0lwq66svse&dl=0" target="_blank" class="download-link">
+                                    <img src="assets/docx.png" alt="DOCX icon" class="w-10 h-10 flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FFFFFF/000000?text=DOCX';">
+                                    <div class="flex-grow">
+                                        <div class="font-semibold">Data Dictionary</div>
+                                        <div class="text-sm text-gray-600">ARC Data Dictionary.docx [24.4 KB]</div>
+                                    </div>
+                                </a>
+                                <a href="https://www.dropbox.com/scl/fi/03468t2ja4a4csqrjzyge/ARC-Firm-Complexity-SAS-Code-Macro.txt?rlkey=hdy4ayytidivws2xkcz8beqds&dl=0" target="_blank" class="download-link">
+                                     <img src="assets/txt.png" alt="TXT icon" class="w-10 h-10 flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FFFFFF/000000?text=TXT';">
+                                    <div class="flex-grow">
+                                        <div class="font-semibold">SAS Code to Generate ARC and Related Measures</div>
+                                        <div class="text-sm text-gray-600">ARC (Firm Complexity) SAS Code Macro.txt [14.1 KB]</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <hr class="my-12">
+                            <h2 class="text-3xl font-bold text-center">XBRL and Firm Complexity in the Media</h2>
+                            <div class="mt-8 grid md:grid-cols-3 gap-8">
+                                <div class="media-card">
+                                    <h3 class="font-bold">Accounting Today:</h3>
+                                    <p class="mt-2 flex-grow">Professors propose new measure of accounting complexity</p>
+                                    <a href="https://www.accountingtoday.com/news/professors-propose-new-measure-of-accounting-complexity" target="_blank" class="media-link">Read more</a>
+                                </div>
+                                 <div class="media-card">
+                                    <h3 class="font-bold">FEI Daily:</h3>
+                                    <p class="mt-2 flex-grow">Measuring Accounting Disclosure Complexity with XBRL</p>
+                                    <a href="https://daily.financialexecutives.org/measuring-accounting-disclosure-complexity-xbrl/" target="_blank" class="media-link">Read more</a>
+                                </div>
+                                 <div class="media-card">
+                                    <h3 class="font-bold">Compliance Week:</h3>
+                                    <p class="mt-2 flex-grow">As Complexity Rises, Quality Slides, XBRL-Based Study Says</p>
+                                    <a href="https://www.complianceweek.com/as-complexity-rises-quality-slides-xbrl-based-study-says/13335.article" target="_blank" class="media-link">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 3: Textual Data -->
+            <div id="page-textual-data" class="page-content page-hidden">
+                <div class="container mx-auto px-4 lg:px-6 py-12 md:py-16">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-4xl font-extrabold text-gray-900">Textual Data on Financial Statement Notes</h1>
+                        <div class="mt-8 prose lg:prose-lg max-w-none">
+                            <h2 class="text-2xl font-bold">Background</h2>
+                            <p>We share textual data of the most prevalent financial statement notes in annual 10-K and 10-Q filings. The data includes the text of each financial statement note along with the count of numbers in each note. The data is available for fiscal years between 2011-2024.</p>
+                            <p>Accurately extracting financial statement notes from financial reports is a challenging task because companies tend to use different terminologies to describe footnotes. The XBRL mandate alleviates this challenge by requiring companies to tag each footnote in its entirety using, when available, standardized TextBlock tags. For example, the most common fair value TextBlock tag is ”us-gaap:FairValueDisclosuresTextBlock” which appears across 73% of firms that report fair value (Ahn et al. 2020).</p>
+                            <p>For more details on the data, please refer to the “TextBlock data dictionary.docx” and the “TextBlock Categories.xlsx” files.</p>
+                            <h2 class="text-2xl font-bold mt-10">Relevant papers that use XBRL TextBlocks:</h2>
+                            <p><em><b> If you decide to use the data, please consider citing at least one of the following papers. These papers explain and/or use XBRL TextBlock tags:</b></em></p>
+                            <ul>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3192536" target="_blank">Ahn, J., R. Hoitash, and U. Hoitash. 2020. Auditor Task-Specific Expertise: The Case of Fair Value Accounting. <em>The Accounting Review</em>, May 2020, Vol. 95, No. 3, pp. 1-32.</a></li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3595401" target="_blank">Hoitash, R., U. Hoitash, and L. Morris. 2021. eXtensible Business Reporting Language (XBRL): A Review and Implications for Future Research. <em>Auditing: A Journal of Practice and Theory 40(2):107-132</em>.</a></li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3635477" target="_blank">Burke, J.J., Hoitash, R., Hoitash, U. and Xiao, S., 2023. The disclosure and consequences of US critical audit matters. <em>The Accounting Review </em>, 98(2), pp.59-95.</a></li>
+                                <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4484489" target="_blank">Burke, J.J., Hoitash, R., Hoitash, U. and Xiao, S., 2025 Financial Reporting Topic Classification: A Domain-Specific Application of Generative Small Language Models. </a> </li>
+                            </ul>
+                            <h2 class="text-2xl font-bold mt-12 text-center text-gray-800">Data and Document Downloads</h2>
+                             <p class="text-center text-lg text-gray-600">Below we provide links to footnote text data and several related documents.</p>
+                            <div class="mt-8 space-y-4">
+                                <a href="https://www.dropbox.com/scl/fi/83owoc9misi9n7d1r1h4p/footnotes061725.zip?rlkey=82y9mrstg7bgr9n5zm0rghr53&dl=0" target="_blank" class="download-link">
+                                    <img src="assets/zip.png" alt="ZIP icon" class="w-10 h-10 flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FFFFFF/000000?text=ZIP';">
+                                    <div class="flex-grow">
+                                        <div class="font-semibold text-gray-800">Download Complete Financial Statement Notes (SAS Format)</div>
+                                        <div class="text-sm text-gray-600">File size 3 GB compressed, 70 GB uncompressed</div>
+                                    </div>
+                                </a>
+                                <a href="https://www.dropbox.com/scl/fi/phcnbu5ko84qo0648du8v/Textblock-Data-Dictionary.docx?rlkey=6um4g40cwniauyd5e1ygwz8nn&dl=0" class="download-link">
+                                    <img src="assets/docx.png" alt="DOCX icon" class="w-10 h-10 flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FFFFFF/000000?text=DOCX';">
+                                     <div class="flex-grow">
+                                        <div class="font-semibold text-gray-800">Financial Statement Notes Text - Data Dictionary</div>
+                                        <div class="text-sm text-gray-600">Textblock Data Dictionary.docx [23.6 KB]</div>
+                                    </div>
+                                </a>
+                                <a href="https://www.dropbox.com/scl/fi/77krssi4vqoj8cjg0z4c0/TextBlock-Categories.xlsx?rlkey=zu8a5zwgqvlz1u1a8sw1w9kxc&dl=0" class="download-link">
+                                    <img src="assets/xlsx.png" alt="XLSX icon" class="w-10 h-10 flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FFFFFF/000000?text=XLSX';">
+                                   <div class="flex-grow">
+                                       <div class="font-semibold text-gray-800">Notes Categories and TextBlocks</div>
+                                       <div class="text-sm text-gray-600">TextBlock Categories.xlsx [16.2 KB]</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 4: Studies -->
+            <div id="page-studies" class="page-content page-hidden">
+                <div class="container mx-auto px-4 lg:px-6 py-12 md:py-16">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-4xl font-extrabold text-gray-900">A partial list of studies that use ARC, or other related XBRL measures</h1>
+                        <div class="mt-8 prose prose-lg max-w-none prose-li:my-3">
+                            <ul>
+                                <li>Ahn, J., Hoitash, R. and Hoitash, U., 2022. Are Words Beneficial to the Consumption of Numbers in Financial Reports? Working paper, Northeastern and Bentley University</li>
+                                <li>Ai, X., 2021. The Auditor’s Application of Professional Judgment: Evidence from M&A-related Critical Audit Matters. Working paper, University of Tennessee.</li>
+                                <li>Akamah, H. and Shu, S.Q., 2021. Large Shareholder Portfolio Diversification and Voluntary Disclosure. Contemporary Accounting Research, 38(4).2918-2950.</li>
+                                <li>Asiri, M., 2021. Three Essays in Investment Efficiency, Accounting Reporting Complexity, and Cybersecurity Breaches: Evidence from Corporate Tax Avoidance (Doctoral dissertation, Curtin University).</li>
+                                <li>Burd, C., 2021. More Numbers, Less Problems: Analysts’ Use of Tax-Related XBRL Data for ETR Forecasting. Less Problems: Analysts’ Use of Tax-Related XBRL Data for ETR Forecasting. Working paper, Boston University.</li>
+                                <li>Burke, J.J., Hoitash, R. and Hoitash, U., 2020. The Disclosure and Consequences of U.S. Critical Audit Matters. Contemporary Accounting Research, 37(4). 2398-2437.</li>
+                                <li>Burke, J.J., Hoitash, R., Hoitash, U. and Xiao, S.X., 2021. The costs and benefits of retirement policies at US audit firms. Journal of Accounting and Public Policy, 40(4). 1-21.</li>
+                                <li>Burke, J.J., Hoitash, R., Hoitash, U. and Xiao, S.X., 2022. The disclosure and consequences of U.S. critical audit matters. Working Paper, University of Colorado, Denver.</li>
+                                <li>Brown, N.C., Huffman, A.A. and Cohen, S., 2022. October. Accounting reporting complexity and non-GAAP earnings disclosure. Working paper, University of Illinois.</li>
+                                <li>Cahan, S.F., Chang, S., Siqueira, W.Z. and Tam, K., 2021. The roles of XBRL and processed XBRL in 10‐K readability. Journal of Business Finance & Accounting. 49 (1-2):33-68</li>
+                                <li>Cheng, X., Huang, F., Palmon, D. and Yin, C., 2021. How does information processing efficiency relate to investment efficiency? Evidence from XBRL adoption. Journal of Information Systems, 35(1).1-25.</li>
+                                <li>Chychyla, R., Leone, A.J. and Minutti-Meza, M., 2019. Complexity of financial reporting standards and accounting expertise. Journal of Accounting and Economics, 67(1) .226-253.</li>
+                                <li>Cohen, S., 2020. Accounting Reporting Complexity and Firm-Level Investment Efficiency. Working paper San Diego State University.</li>
+                                <li>Docimo, W.M., Gunn, J.L., Li, C. and Michas, P.N., 2021. Do Foreign Component Auditors Harm Financial Reporting Quality? A Subsidiary‐Level Analysis of Foreign Component Auditor Use. Contemporary Accounting Research, 38(4). 3113-3145.</li>
+                                <li>Huang, F., No, W.G. and Vasarhelyi, M.A., 2019. Do managers use extension elements strategically in the SEC’s tagged data for financial statements? Evidence from XBRL complexity. Journal of Information Systems, 33(3). 61-74.</li>
+                                <li>Garcia, J., de Villiers, C. and Li, L., 2021. Is a client’s corporate social responsibility performance a source of audit complexity? International Journal of Auditing, 25(1). 75-102.</li>
+                                <li>Griffin, P., Enache, L. and Moldovan, R., 2021. Characteristics and Consequences of ASC 842 Lease Transition Disclosures. Working paper, University of California, Davis.</li>
+                                <li>Guo, F., Luo, X., Wheeler, P.R., Yang, L., Zhao, X. and Zhang, Y., 2021a. Enterprise Resource Planning Systems and XBRL Reporting Quality. Journal of Information Systems, 35(3). 77-106.</li>
+                                <li>Guo, F., Walton, S., Wheeler, P.R. and Zhang, Y., 2021b. Early Disruptors: Examining the Determinants and Consequences of Blockchain Early Adoption. Journal of Information Systems, 35(2). 219-242.</li>
+                                <li>He, C. and Kohlbeck, M.J., 2021. Federal Government Contracts and Financial Reporting Quality. Working paper, Marquette and Florida Atlantic University.</li>
+                                <li>Hoitash, R. and Hoitash, U., 2018. Measuring accounting reporting complexity with XBRL. The Accounting Review, 93(1). 259-287.</li>
+                                <li>Hoitash, R., Hoitash U. and Morris L., 2021a. eXtensible Business Reporting Language: A Review and Implications for Future Research. Auditing: A Journal of Practice & Theory, 40 (2): 107–132.</li>
+                                <li>Hoitash, R., Hoitash, U., Morris, L., and Yezegel, A., 2021b. Quarterly Footnote Disclosures as a Leading Indicator of Audit Risk. Working paper, Bentley and Northeastern University.</li>
+                                <li>Hoitash, R., Hoitash, U. and Yezegel, A., 2021c. Can sell-side analysts’ experience, expertise and qualifications help mitigate the adverse effects of accounting reporting complexity? Review of Quantitative Finance and Accounting. 57:1-39.</li>
+                                <li>Johnston, J., 2020. Extended XBRL tags and financial analysts’ forecast error and dispersion. Journal of Information Systems, 34(3).105-131.</li>
+                                <li>Li, M., 2020. Legal Intensity of Financial Reports, Corporate Governance, and Financial Reporting Quality (Doctoral dissertation, Temple University).</li>
+                                <li>Seavey, S.E., Whitworth, J.D. and Imhof, M.J., 2021. Early Earnings Releases and the Role of Accounting Quality. Auditing: A Journal of Practice & Theory.</li>
+                                <li>Smith, A.L., Zhang, Y. and Kipp, P.C., 2019. Cloud-computing risk disclosure and ICFR material weakness: The moderating role of accounting reporting complexity. Journal of Information Systems, 33(3).1-17.</li>
+                                <li>Walton, S., Yang, L. and Zhang, Y., 2021. XBRL Tag Extensions and Tax Accrual Quality. Journal of Information Systems, 35(2).91-114.</li>
+                                <li>Zhou, J., 2020. Does one size fit all? Evidence on XBRL adoption and 10‐K filing lag. Accounting & Finance, 60(3).3183-3213.</li>
+                                <li>Zimmerman, A., Barr-Pulliam, D., Lee, J.S. and Minutti-Meza, M., 2021. Auditors’ use of in-house specialists. Working paper, Florida State University.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 5: About Us -->
+            <div id="page-about" class="page-content page-hidden">
+                <div class="bg-white">
+                    <div class="container mx-auto px-4 lg:px-6 py-12 md:py-16">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 text-center">The Researchers</h1>
+                        <div class="mt-12 space-y-16">
+                            <div class="grid md:grid-cols-3 gap-8 md:gap-12 items-start">
+                                <div class="md:col-span-1">
+                                    <img src="assets/udi.jpg" alt="Photo of Udi Hoitash" class="rounded-lg shadow-lg w-full" onerror="this.onerror=null;this.src='https://placehold.co/400x400/CCCCCC/FFFFFF?text=Udi+Hoitash';">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <h2 class="text-3xl font-bold text-gray-900">Udi Hoitash</h2>
+                                    <div class="mt-4 prose lg:prose-lg max-w-none prose-p:my-2">
+                                        <p>Udi Hoitash, Ph.D.<br>
+                                        Lilian L. and Harry A. Cowan Research Professor<br>
+                                        D'Amore-McKim School of Business, Northeastern University</p>
+                                        <p>Email: <a href="mailto:u.hoitash@neu.edu">u.hoitash@neu.edu</a></p>
+                                        <p class="space-x-4">
+                                            <a href="https://www.damore-mckim.northeastern.edu/faculty/h/hoitash-udi" target="_blank" class="font-semibold">Faculty Profile</a>
+                                            <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=514198" target="_blank" class="font-semibold">SSRN</a>
+                                            <a href="https://scholar.google.com/citations?user=dbQbp1sAAAAJ&hl=en" target="_blank" class="font-semibold">Google Scholar</a>
+                                            <a href="https://www.firmbenchmarking.com/" target="_blank" class="font-semibold">Firm Benchmarking</a>
+                                        </p>
+                                        <p class="mt-6 text-gray-700"><strong>Udi Hoitash</strong> is the Lilian L. and Harry A. Cowan Endowed Professor of Accounting at the D’Amore-McKim School of Business, Northeastern University. Professor Hoitash received his Ph.D. in Accounting and Information Systems from Rutgers University, his MBA from Tel-Aviv University and his B.A. in Computer Science from the College of Tal Aviv-Yaffo. His primary research interests include auditing, disclosure quality, XBRL and corporate governance, and his research often uses textual analysis and other data analytics tools. Professor Hoitash currently serves as an Editor for Auditing: A Journal of Practice & Theory. He has published multiple peer-reviewed papers, including papers at top accounting and finance journals such as The Accounting Review, Contemporary Accounting Research, Journal of Accounting and Economics, the Journal of Financial Economics and the Journal of Financial and Quantitive Analysis. His work has been frequently featured in news outlets such as the WSJ CFO magazine, Bloomberg Radio and CFO.com. Professor Hoitash’s teaching interests include managerial accounting and corporate governance.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="grid md:grid-cols-3 gap-8 md:gap-12 items-start">
+                                <div class="md:col-span-1">
+                                    <img src="assets/rani.jpg" alt="Photo of Rani Hoitash" class="rounded-lg shadow-lg w-full" onerror="this.onerror=null;this.src='https://placehold.co/400x400/CCCCCC/FFFFFF?text=Rani+Hoitash';">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <h2 class="text-3xl font-bold text-gray-900">Rani Hoitash</h2>
+                                    <div class="mt-4 prose lg:prose-lg max-w-none prose-p:my-2">
+                                        <p>Rani Hoitash, Ph.D., CISA<br>
+                                        John E. Rhodes Professor of Accountancy<br>
+                                        Bentley University</p>
+                                        <p>Email: <a href="mailto:rhoitash@bentley.edu">rhoitash@bentley.edu</a></p>
+                                        <p class="space-x-4">
+                                            <a href="https://faculty.bentley.edu/details.asp?uname=rhoitash" target="_blank" class="font-semibold">Faculty Profile</a>
+                                            <a href="https://ssrn.com/author=112114" target="_blank" class="font-semibold">SSRN</a>
+                                            <a href="https://scholar.google.com/citations?user=xBPyxNIAAAAJ&hl=en&oi=ao" target="_blank" class="font-semibold">Google Scholar</a>
+                                            <a href="https://www.firmbenchmarking.com/" target="_blank" class="font-semibold">Firm Benchmarking</a>
+                                        </p>
+                                        <p class="mt-6 text-gray-700"><strong>Rani Hoitash</strong> is the John E. Rhodes Professor of Accountancy at Bentley University. He received his PhD in Accounting and Information Systems from Rutgers University and a Bachelor of Science in Economics at the College of Management in Tel-Aviv Israel. Research by Rani Hoitash concentrates on corporate governance, internal controls and auditing. His work is published in The Accounting Review, Journal of Accounting Research, Journal of Accounting & Economics, Journal of Financial Economics, Contemporary Accounting Research, Auditing: A Journal of Practice and Theory, Sloan Management Review, and several other journals. Professor Hoitash’s teaching interests include financial accounting, accounting information systems, and auditing. Professor Hoitash recently served as an Editor of Auditing: A Journal of Practice and Theory and on the editorial boards of Contemporary Accounting Research and the Journal of Business Research. He is a member of the Information Systems Audit and Controls Association and the American Accounting Association and is a Certified Information System Auditor (CISA).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-gray-400 mt-auto">
+            <div class="container mx-auto px-4 lg:px-6 py-6 text-center text-sm">
+                <p>&copy; <span id="year"></span> XBRL Research. All Rights Reserved.</p>
+                <p class="mt-1">A Measure of Firm Complexity (Company Complexity)</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    // Self-executing anonymous function to avoid polluting the global namespace
+    (function() {
+        // --- Page and Navigation State ---
+        const pages = {
+            'page-home': 'XBRL Research | A measure of Firm Complexity',
+            'page-firm-complexity': 'Firm Complexity | XBRL Research',
+            'page-textual-data': 'Textual Data on Financial Statement Notes | XBRL Research',
+            'page-studies': 'Studies Using ARC | XBRL Research',
+            'page-about': 'About Us | XBRL Research'
+        };
+
+        const allPageDivs = document.querySelectorAll('.page-content');
+        const allNavLinks = document.querySelectorAll('.nav-link');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        /**
+         * Switches the visible page content.
+         * @param {string} targetId The ID of the page content div to show.
+         */
+        function showPage(targetId) {
+            // Hide all pages to ensure a clean slate
+            allPageDivs.forEach(div => {
+                div.classList.add('page-hidden');
+            });
+
+            // Show the target page if it exists
+            const targetPage = document.getElementById(targetId);
+            if (targetPage) {
+                targetPage.classList.remove('page-hidden');
+            }
+
+            // Update the active state for all navigation links
+            allNavLinks.forEach(link => {
+                link.classList.toggle('active', link.dataset.target === targetId);
+            });
+            
+            // Update the document title for better browser history and tab identification
+            document.title = pages[targetId] || 'XBRL Research';
+
+            // Scroll to the top of the window for a consistent user experience
+            window.scrollTo(0, 0);
+
+            // Always hide the mobile menu after a navigation choice is made
+            if (mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        /**
+         * Handles click events for navigation.
+         * Uses event delegation on the main app container for efficiency.
+         * @param {Event} event The click event object.
+         */
+        function handleNavClick(event) {
+            const target = event.target.closest('[data-target]');
+            if (target) {
+                event.preventDefault(); // Prevent default anchor behavior
+                const targetId = target.dataset.target;
+                showPage(targetId);
+            }
+        }
+
+        // --- Event Listeners ---
+
+        // Listen for DOM content to be fully loaded before running scripts
+        document.addEventListener('DOMContentLoaded', function () {
+            const appContainer = document.getElementById('app');
+            if (appContainer) {
+                appContainer.addEventListener('click', handleNavClick);
+            }
+
+            // Mobile menu toggle button
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Set current year in the footer dynamically
+            const yearSpan = document.getElementById('year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Contact Form Submission Logic
+            const form = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+
+            async function handleSubmit(event) {
+                event.preventDefault();
+                if (!formStatus) return;
+
+                const data = new FormData(event.target);
+                formStatus.textContent = 'Sending...';
+                formStatus.className = 'text-blue-600';
+
+                try {
+                    const response = await fetch(event.target.action, {
+                        method: form.method,
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        formStatus.textContent = "Thanks for your submission! We'll be in touch.";
+                        formStatus.className = 'text-green-600 font-semibold';
+                        form.reset();
+                    } else {
+                        const errorData = await response.json();
+                        if (Object.hasOwn(errorData, 'errors')) {
+                            formStatus.textContent = errorData.errors.map(e => e.message).join(", ");
+                        } else {
+                            formStatus.textContent = "Oops! There was a problem submitting your form.";
+                        }
+                        formStatus.className = 'text-red-600 font-semibold';
+                    }
+                } catch (error) {
+                    formStatus.textContent = "Oops! There was a network error. Please try again.";
+                    formStatus.className = 'text-red-600 font-semibold';
+                }
+            }
+
+            if (form) {
+                form.addEventListener("submit", handleSubmit);
+            }
+
+            // Initialize the page view
+            showPage('page-home');
+        });
+    })();
+    </script>
+</body>
+</ht
