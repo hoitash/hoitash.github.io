@@ -419,7 +419,7 @@
                                 <li>Guo, F., Walton, S., Wheeler, P.R. and Zhang, Y., 2021b. Early Disruptors: Examining the Determinants and Consequences of Blockchain Early Adoption. Journal of Information Systems, 35(2). 219-242.</li>
                                 <li>He, C. and Kohlbeck, M.J., 2021. Federal Government Contracts and Financial Reporting Quality. Working paper, Marquette and Florida Atlantic University.</li>
                                 <li>Hoitash, R. and Hoitash, U., 2018. Measuring accounting reporting complexity with XBRL. The Accounting Review, 93(1). 259-287.</li>
-                                <li>Hoitash, R., Hoitash U. and Morris L., 2021a. eXtensible Business Reporting Language: A Review and Implications for Future Research. Auditing: A Journal of Practice & Theory, 40 (2): 107–132.</li>
+                                <li>Hoitash, R. and Hoitash U. and Morris L., 2021a. eXtensible Business Reporting Language: A Review and Implications for Future Research. Auditing: A Journal of Practice & Theory, 40 (2): 107–132.</li>
                                 <li>Hoitash, R., Hoitash, U., Morris, L., and Yezegel, A., 2021b. Quarterly Footnote Disclosures as a Leading Indicator of Audit Risk. Working paper, Bentley and Northeastern University.</li>
                                 <li>Hoitash, R., Hoitash, U. and Yezegel, A., 2021c. Can sell-side analysts’ experience, expertise and qualifications help mitigate the adverse effects of accounting reporting complexity? Review of Quantitative Finance and Accounting. 57:1-39.</li>
                                 <li>Johnston, J., 2020. Extended XBRL tags and financial analysts’ forecast error and dispersion. Journal of Information Systems, 34(3).105-131.</li>
@@ -714,10 +714,21 @@
             if (form) {
                 form.addEventListener("submit", handleFormSubmit);
             }
+
+            // GA4 Click Tracking Listener
+            document.addEventListener('click', function(event) {
+                const target = event.target.closest('a, button');
+                if (target) {
+                    gtag('event', 'click', {
+                        'event_category': 'engagement',
+                        'event_label': target.innerText.trim() || target.getAttribute('aria-label') || 'unlabeled_element',
+                        'link_url': target.href || 'button_click',
+                        'page_path': location.pathname + location.hash
+                    });
+                }
+            }, true);
         });
     })();
     </script>
 </body>
 </html>
-
-
